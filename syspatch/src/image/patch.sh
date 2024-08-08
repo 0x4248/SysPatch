@@ -12,19 +12,21 @@ cd fs
 cp -r * /
 cd ..
 echo -e "[ SYSPATCH ]\tInstalling configuration files"
-mkdir /etc/syspatch
+mkdir /tmp/syspatch
 cd meta
-cp -r * /etc/syspatch
+cp -r * /tmp/syspatch
 cd ..
 echo -e "[ SYSPATCH ]\tCleaning up"
 rm -rf fs meta
 
 if [ -f /etc/syspatch/reboot ]; then
     echo -e "[ SYSPATCH ]\tChecking for reboot"
-    if [ "$(cat /etc/syspatch/reboot)" = "True" ]; then
+    if [ "$(cat /tmp/syspatch/reboot)" = "True" ]; then
+        rm -rf /tmp/syspatch
         echo -e "[ SYSPATCH ]\tRebooting"
         reboot
     fi
 fi
 
+rm -rf /tmp/syspatch
 echo -e "[ SYSPATCH ]\tDone"
