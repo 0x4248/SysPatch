@@ -6,7 +6,8 @@
 #
 # Copyright (C) 2024 0x4248
 
-
+echo -e "SysPatch $(cat meta/SPversion) $(cat meta/commit) #$(cat meta/build)"
+echo -e "Patching system ($(uname -n)) with path $(cat meta/name)"
 echo -e "[ SYSPATCH ]\tPatching"
 cd fs
 cp -r * /

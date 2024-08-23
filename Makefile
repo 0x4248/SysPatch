@@ -21,11 +21,14 @@ all: clean init genversion build
 init:
 	@echo "[ SYSPATCH ]\t Initializing"
 	@mkdir -p $(BUILD)
+	@touch build.txt
+	@echo $$(($$(cat build.txt) + 1)) > build.txt
 
 genversion:
 	@echo "[ SYSPATCH ]\t Generating version"
 	@mkdir -p $(BUILD)/tmp
 	@echo $(VERSION) > $(BUILD)/tmp/version
+	@git rev-parse HEAD > $(BUILD)/tmp/commit
 
 build: 
 	@echo "[ SYSPATCH ]\t Generating patch"

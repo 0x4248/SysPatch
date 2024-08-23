@@ -54,6 +54,8 @@ def main():
 
 
     shutil.copy(build + "/tmp/version", build + "/image/meta/SPversion")
+    shutil.copy(build + "/tmp/commit", build + "/image/meta/commit")
+    shutil.copy("build.txt", build + "/image/meta/build")
     shutil.copy("syspatch/src/image/patch.sh", build + "/image/patch.sh")
 
     with tarfile.open(build + "/patch.tar.gz", "w:gz") as tar:
