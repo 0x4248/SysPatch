@@ -10,11 +10,30 @@ SOURCE = src
 PYTHON = python3
 BUILD = build
 
-all: build
+VERSION_MAJOR = 1
+VERSION_MINOR = 0
+VERSION_PATCH = 0
+VERSION_EXTRA = alpha
+VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)-$(VERSION_EXTRA)
+
+all: clean init genversion build
+
+init:
+	@echo "[ SYSPATCH ]\t Initializing"
+	@mkdir -p $(BUILD)
+
+genversion:
+	@echo "[ SYSPATCH ]\t Generating version"
+	@mkdir -p $(BUILD)/tmp
+	@echo $(VERSION) > $(BUILD)/tmp/version
 
 build: 
 	@echo "[ SYSPATCH ]\t Generating patch"
 	@$(PYTHON) syspatch/src/generatepatch.py $(SOURCE) $(BUILD)
+
+clean:
+	@echo "[ SYSPATCH ]\t Cleaning"
+	@rm -rf $(BUILD)
 
 deployment_server:
 	@echo "[ SYSPATCH ]\t Starting deployment server"
