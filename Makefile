@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0
 # SysPatch
-# A simple patching system for Linux
+# A simple tool to create and apply patches to a system.
 #
 # Makefile
 #
