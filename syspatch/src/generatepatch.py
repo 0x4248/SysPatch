@@ -13,7 +13,7 @@ import shutil
 try:
     import toml
 except ImportError:
-    print("Please install toml package")
+    print("Please install toml package. Run: pip install toml")
     sys.exit(1)
 
 import tarfile
