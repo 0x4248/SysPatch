@@ -1,6 +1,6 @@
 # SysPatch
 
-A simple patching system for Linux.
+SysPatch is a simple tool to create and apply patches to a system. It is designed to be used with Linux systems.
 
 ## How it works
 
