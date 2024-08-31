@@ -4,7 +4,7 @@ SysPatch is a simple tool to create and apply patches to a system. It is designe
 
 ## How it works
 
-Syspatch creates a `path.tar` which contains the fs structure that will be applied to the system and scripts that will be executed to patch and configure the system.
+SysPatch creates a `path.tar` which contains the fs structure that will be applied to the system and scripts that will be executed to patch and configure the system.
 
 ## Creating a patch
 
