@@ -4,6 +4,7 @@
 #
 # syspatch/src/generatepatch.py
 #
+# GNU General Public License v3.0
 # Copyright (C) 2024 0x4248
 
 import sys

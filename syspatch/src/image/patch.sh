@@ -4,6 +4,7 @@
 #
 # syspatch/src/image/patch.sh
 #
+# GNU General Public License v3.0
 # Copyright (C) 2024 0x4248
 
 echo -e "SysPatch $(cat meta/SPversion) $(cat meta/commit) #$(cat meta/build)"
