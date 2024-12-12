@@ -20,16 +20,7 @@ import tarfile
 
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: generatepatch.py <source> <build>")
-        sys.exit(1)
-
-    source = sys.argv[1]
-    build = sys.argv[2]
-
-    if not os.path.exists(source):
-        print("Source does not exist")
-        sys.exit(1)
+    build = sys.argv[1]
 
     if not os.path.exists(build):
         os.makedirs(build)
@@ -45,18 +36,14 @@ def main():
 
 
     # This script should copy the files to $(BUILD)/image/fs
-    os.system("sh " + source + "/build.sh ")
+    os.system("sh " + "meta/build.sh ")
 
-    meta = toml.load(source + "/meta/Meta.toml")
+    meta = toml.load("meta/Meta.toml")
 
     for key in meta:
         with open(build + "/image/meta/" + key, "w") as f:
             f.write(str(meta[key])+"\n")
 
-
-    shutil.copy(build + "/tmp/version", build + "/image/meta/SPversion")
-    shutil.copy(build + "/tmp/commit", build + "/image/meta/commit")
-    shutil.copy("build.txt", build + "/image/meta/build")
     shutil.copy("syspatch/src/image/patch.sh", build + "/image/patch.sh")
 
     with tarfile.open(build + "/patch.tar.gz", "w:gz") as tar:

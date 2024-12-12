@@ -9,4 +9,4 @@
 
 # cd build && python3 -m http.server 4522 && cd ..
 
-curl -o patch.tar http://192.168.64.1:4522/patch.tar && tar -xf patch.tar && sh patch.sh && rm -f patch.sh patch.tar
+curl -o patch.tar http://192.168.65.1:4522/patch.tar && tar -xf patch.tar && sh patch.sh && rm -f patch.sh patch.tar
