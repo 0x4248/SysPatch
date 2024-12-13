@@ -20,6 +20,11 @@ cd ..
 echo -e "[ SYSPATCH ]\tCleaning up"
 rm -rf fs meta
 
+if [ -f /etc/syspatch/post_command ]; then
+    echo -e "[ SYSPATCH ]\tRunning post command"
+    /bin/sh /etc/syspatch/post_command
+fi
+
 if [ -f /etc/syspatch/reboot ]; then
     echo -e "[ SYSPATCH ]\tChecking for reboot"
     if [ "$(cat /tmp/syspatch/reboot)" = "True" ]; then
@@ -28,6 +33,8 @@ if [ -f /etc/syspatch/reboot ]; then
         reboot
     fi
 fi
+
+
 
 rm -rf /tmp/syspatch
 echo -e "[ SYSPATCH ]\tDone"
