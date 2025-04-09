@@ -5,7 +5,7 @@
 # Makefile - Base makefile
 # Copy this file to the root of the project and run `make` to generate the patch.
 #
-# Copyright (C) 2024 0x4248
+# Copyright (C) 2025 0x4248
 
 SOURCE = src
 PYTHON = python3

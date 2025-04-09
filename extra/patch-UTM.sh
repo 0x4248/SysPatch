@@ -5,7 +5,7 @@
 # extra/patch-UTM.sh
 #
 # GNU General Public License v3.0
-# Copyright (C) 2024 0x4248
+# Copyright (C) 2025 0x4248
 
 # cd build && python3 -m http.server 4522 && cd ..
 
